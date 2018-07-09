@@ -10,3 +10,20 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 # answer = 
+def sum_even_valued(max):
+    first = 1
+    second = 2
+    last_item = second
+    item = first + second
+    sum = second
+    while item < max:
+        if item % 2 == 0:
+            sum = sum + item
+        item = item + last_item
+        last_item = item - last_item
+    return sum
+        
+result = sum_even_valued(10)
+print('result=%s' % result)
+result = sum_even_valued(4000000)
+print('result=%s' % result)
